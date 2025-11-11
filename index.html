@@ -48,71 +48,38 @@
       border-radius: 16px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
-    form {
-      display: flex;
-      gap: 8px;
-      max-width: 400px;
-    }
-    input[type="email"] {
-      flex: 1;
-      padding: 12px;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-      font-size: 14px;
-    }
-    button {
-  padding: 12px 16px;
-  background: #2acb72; /* Green */
-  border: none;
-  color: white;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-}
-button:hover {
-  opacity: 0.9;
-}
-    .success {
-      background: #ecfdf5;
-      color: #065f46;
-      padding: 10px 14px;
-      border-radius: 8px;
-      border: 1px solid #bbf7d0;
-      display: none;
-      margin-top: 12px;
-      max-width: 400px;
-    }
     @media (max-width: 800px) {
       .container { flex-direction: column-reverse; text-align: center; }
       .screenshot { width: 80%; }
-      form { margin: 0 auto; flex-direction: column; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="text">
-      <h1>Live Allergy-Free, Eat Fearlessly.</h1>
-      <p>Discover restaurants, recipes, and products tailored to your dietary needs because your allergies shouldn’t limit your life.</p>
-      <form id="waitlist-form">
-        <input type="email" placeholder="Enter your email" required />
-        <button type="submit">Join</button>
-      </form>
-      <div class="success" id="success-message">Thank you! You've joined the waitlist.</div>
+      <h1>Join Apollo Waitlist</h1>
+      <p>Be the first to get access to Apollo, the ultimate productivity app. Sign up now!</p>
+
+      <!-- FreeWaitlists Widget -->
+      <script 
+        src="https://freewaitlists.com/widgets/email-widget.js"
+        data-waitlist-id="cmhuuejr2000do501ndxq0lre"
+        data-button-text="Join Waitlist"
+        data-input-placeholder="Enter your email"
+        data-success-message="Successfully signed up!"
+        data-error-message="Something went wrong. Please try again later."
+        data-bad-email-message="Please enter a valid email address."
+        data-button-color="#2acb72"
+        data-background-color="#FFFFFF"
+        data-font-color="#111827"
+        data-border-color="#d1d5db"
+        data-button-font-color="#FFFFFF"
+        data-border-radius="8"
+        defer
+      ></script>
+
     </div>
     <img src="images/app-screen.png" alt="App screenshot" class="screenshot" />
   </div>
-
-  <script>
-    const form = document.getElementById('waitlist-form');
-    const successMessage = document.getElementById('success-message');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // Here you would send the email to your API
-      successMessage.style.display = 'block';
-      form.reset();
-    });
-  </script>
 </body>
 </html>
